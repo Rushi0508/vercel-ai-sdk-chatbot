@@ -27,10 +27,13 @@ function GlobalChat({ initialMessages }: GlobalChatProps) {
 		setInput,
 		handleSubmit: handleChatSubmit,
 	} = useChat({
-		api: "http://localhost:3001/api/ai",
-		initialMessages: initialMessages,
+		api: "http://localhost:3001/api/ai/generate-text",
+		initialMessages: [],
 		sendExtraMessageFields: true,
 		experimental_throttle: 100,
+		onFinish: (message) => {
+			console.log(message);
+		},
 	});
 
 	const handleSubmit = async (file?: File) => {

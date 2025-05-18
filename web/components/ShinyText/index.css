@@ -8,12 +8,7 @@
 }
 
 .shiny-text {
-	background: linear-gradient(
-		90deg,
-		hsl(var(--foreground) / 0.3),
-		hsl(var(--foreground)),
-		hsl(var(--foreground) / 0.3)
-	);
+	background: linear-gradient(90deg, #00000020, #000000, #00000020);
 	-webkit-background-clip: text;
 	background-clip: text;
 	-webkit-text-fill-color: transparent;

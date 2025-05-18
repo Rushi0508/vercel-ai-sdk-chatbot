@@ -87,6 +87,13 @@ export function GlobalChatInput({
 		}
 	};
 
+	const handleKeyDown = (e: React.KeyboardEvent) => {
+		if (e.key === "Enter" && !e.shiftKey) {
+			e.preventDefault();
+			handleSubmit();
+		}
+	};
+
 	const adjustTextareaHeight = () => {
 		if (textareaRef.current) {
 			textareaRef.current.style.height = "auto";
@@ -138,6 +145,7 @@ export function GlobalChatInput({
 						placeholder="Message..."
 						className="max-h-[200px] min-h-[60px] w-full resize-none border-0 bg-transparent px-4 py-[1.3rem] focus-visible:ring-0"
 						disabled={disabled || isLoading}
+						onKeyDown={handleKeyDown}
 					/>
 					<div className="absolute bottom-2 right-2 flex items-center gap-2">
 						<input

@@ -12,9 +12,10 @@ const PureWebsiteSearchTool = ({ tool }: WebsiteSearchToolProps) => {
 		return null;
 	}
 	const isLoading = tool.state === "partial-call" || tool.state === "call";
+	console.log(tool);
 	if (!isLoading) {
 		const event = tool.result;
-		if (event?.success) {
+		if (event?.answer) {
 			return (
 				<div className="my-1 flex w-fit items-center gap-1 rounded-md text-sm">
 					<Check size={16} className="text-green-500" />

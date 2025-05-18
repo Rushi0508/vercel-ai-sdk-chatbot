@@ -15,7 +15,7 @@ const UserMessage = ({ message }: UserMessageProps) => {
 		<div className="flex w-full justify-end gap-3 items-start">
 			<div className={cn("flex flex-col gap-1", "items-end")}>
 				<div className={"w-full rounded-2xl bg-primary px-4 py-2"}>
-					<CustomMarkdown message={message.content} className="prose-invert dark:prose text-primary-foreground" />
+					<CustomMarkdown message={message.content} className="prose-invert dark:prose" />
 					<AttachmentView attachments={message.experimental_attachments} />
 				</div>
 				<span className={cn("text-xs", "text-muted-foreground")}>

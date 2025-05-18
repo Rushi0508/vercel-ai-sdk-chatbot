@@ -20,10 +20,10 @@ const AiMessage = ({ message }: PagsMessageProps) => {
 					{message.parts?.map((part, index) => {
 						const { type } = part;
 						if (type === "reasoning") {
-							return <CustomMarkdown key={index} message={part.reasoning} className="text-primary-foreground" />;
+							return <CustomMarkdown key={index} message={part.reasoning} className="text-primary" />;
 						}
 						if (type === "text") {
-							return <CustomMarkdown key={index} message={part.text} className="text-primary-foreground" />;
+							return <CustomMarkdown key={index} message={part.text} className="text-primary" />;
 						}
 						if (type === "tool-invocation") {
 							const { toolName } = part.toolInvocation;
